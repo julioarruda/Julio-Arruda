@@ -1,6 +1,6 @@
 remote_theme: bitbrain/jekyll-dash
 # required by disqus to display comments
-url: https://your-site-url
+url: https://julioarruda.com
 
 # jekyll-paginate
 paginate: 5
@@ -33,5 +33,5 @@ dash:
   show_author: true
 
 # Replaces the default avatar provider (gravatar)
-#avatar_source: github
-#github_username: bitbrain
+avatar_source: github
+github_username: julioarruda
