@@ -1,4 +1,4 @@
-theme: minima
+remote_theme: bitbrain/jekyll-dash
 # required by disqus to display comments
 url: https://your-site-url
 
