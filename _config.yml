@@ -43,3 +43,10 @@ dash:
 # Replaces the default avatar provider (gravatar)
 avatar_source: github
 github_username: julioarruda
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
+ - jekyll-paginate
+ - liquid-md5
+ - jekyll/tagging
