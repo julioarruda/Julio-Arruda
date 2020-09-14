@@ -14,6 +14,7 @@ tag_page_dir: tag
 dash:
   title: Julio Arruda 
   date_format: "%b %-d, %Y"
+  show_author: true
 
   disqus:
     shortname: <your-disqus-shortname>
@@ -21,13 +22,13 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
+    - url: https://twitter.com/julioarrudac
       icon: twitter-square
       color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
+    - url: https://youtube.com/user/julioarrudac
+      icon: youtube-square
       color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/julioarruda
       icon: github-square
       color: purple
       
