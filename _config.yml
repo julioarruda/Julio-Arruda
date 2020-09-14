@@ -12,6 +12,7 @@ tag_page_layout: tag_page
 tag_page_dir: tag
 
 dash:
+  title: Julio Arruda 
   date_format: "%b %-d, %Y"
 
   disqus:
