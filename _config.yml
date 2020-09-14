@@ -3,6 +3,8 @@ remote_theme: bitbrain/jekyll-dash
 url: https://julioarruda.com
 title: 'Julio Arruda'
 description: "GitHub, Azure DevOps e afins"
+author: Julio Arruda"
+
 
 # jekyll-paginate
 paginate: 5
