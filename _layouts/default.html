@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body style="margin:0;">
+  <div id="loader" style="display: none;"></div>
+  <script>
+    var myVar;
+
+    function loader_function() {
+      myVar = setTimeout(showPage, 500);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("content-wrapper").style.display = "block";
+    }
+  </script>
+  {%- include header.html -%}
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper" id="content-wrapper" style="display: block;">
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+  <script>
+    window.FontAwesomeConfig = {
+      searchPseudoElements: true
+    }
+  </script>
+</body>
+
+</html>
