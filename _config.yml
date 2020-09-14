@@ -35,8 +35,10 @@ dash:
     - url: https://github.com/julioarruda
       icon: github-square
       color: purple
-      
-  show_author: true
+     - url: https://www.linkedin.com/in/julioarrudac/
+      icon: linkedin
+      color: cyan
+ 
 
 # Replaces the default avatar provider (gravatar)
 avatar_source: github
