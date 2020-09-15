@@ -20,7 +20,9 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - run: bundle exec jekyll build
+      - run: |
+         bundle install
+         bundle exec jekyll build
 
       - name: Publish generated content to GitHub Pages
         uses: tsunematsu21/actions-publish-gh-pages@v1.0.1
