@@ -50,3 +50,6 @@ plugins:
  - jekyll-paginate
  - liquid-md5
  - jekyll/tagging
+ - jekyll-seo-tag
+
+google_analytics: UA-177866636-1
