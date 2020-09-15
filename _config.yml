@@ -1,4 +1,5 @@
-remote_theme: bitbrain/jekyll-dash
+#remote_theme: bitbrain/jekyll-dash
+theme: jekyll-dash
 # required by disqus to display comments
 url: https://julioarruda.com
 title: 'Julio Arruda'
