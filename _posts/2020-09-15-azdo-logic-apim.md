@@ -48,3 +48,14 @@ To run this ARM, you need to set one variable in execution time:
 
 After the ARM run, you be able to get a value called *sasToken*, and this value, is necessary to creation a Named Value, in next step.
 <script src="https://gist.github.com/julioarruda/e04bb81b075b8d769f34e69b2d484222.js"></script>
+
+## APIM Named Value
+Now, we need to create a Named Value in APIM. In this step, we need to use the [Azure Rest API](https://docs.microsoft.com/en-us/rest/api/apimanagement/2019-12-01/namedvalue/createorupdate) again.
+
+In this script, we using the Access Key that we got in the last step, to add in the body of the API request. This script output an Azure DevOps variable with the Named Value Name.
+
+<script src="https://gist.github.com/julioarruda/55403362a03a11ce0fb62b2a09c2052a.js"></script>
+
+## Mounting the Inbound Process.
+Now, we can be able to create a Inbound Process to Add in your API Method, like the first script in this article, changing the variables from Backend Name and Named Value.
+<script src="https://gist.github.com/julioarruda/9ce0ac2ed8830b7c869cc1e5b23a7d3a.js"></script>

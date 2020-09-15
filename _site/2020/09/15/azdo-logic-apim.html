@@ -114,6 +114,17 @@ For example, when you integrate the both using Azure Portal, behind the scenes, 
 <p>After the ARM run, you be able to get a value called <em>sasToken</em>, and this value, is necessary to creation a Named Value, in next step.
 <script src="https://gist.github.com/julioarruda/e04bb81b075b8d769f34e69b2d484222.js"></script></p>
 
+<h2 id="apim-named-value">APIM Named Value</h2>
+<p>Now, we need to create a Named Value in APIM. In this step, we need to use the <a href="https://docs.microsoft.com/en-us/rest/api/apimanagement/2019-12-01/namedvalue/createorupdate">Azure Rest API</a> again.</p>
+
+<p>In this script, we using the Access Key that we got in the last step, to add in the body of the API request. This script output an Azure DevOps variable with the Named Value Name.</p>
+
+<script src="https://gist.github.com/julioarruda/55403362a03a11ce0fb62b2a09c2052a.js"></script>
+
+<h2 id="mounting-the-inbound-process">Mounting the Inbound Process.</h2>
+<p>Now, we can be able to create a Inbound Process to Add in your API Method, like the first script in this article.
+<script src="https://gist.github.com/julioarruda/9ce0ac2ed8830b7c869cc1e5b23a7d3a.js"></script></p>
+
 </div>
 
 
