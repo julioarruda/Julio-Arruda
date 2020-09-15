@@ -21,7 +21,7 @@ dash:
   show_author: true
 
   disqus:
-    shortname: <your-disqus-shortname>
+    shortname: julioarrudamvp
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
