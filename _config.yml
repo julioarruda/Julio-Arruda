@@ -2,7 +2,9 @@ remote_theme: bitbrain/jekyll-dash
 # required by disqus to display comments
 url: https://julioarruda.com
 title: 'Julio Arruda'
-description: "GitHub, Azure DevOps and more"
+description: > 
+My name is Julio Arruda, and i'm a Microsoft MVP and GitHub Star.
+In this blog, you can found contents about GitHub, Azure DevOps and more.
 author: Julio Arruda"
 
 
