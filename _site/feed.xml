@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-15T13:08:22-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Julio Arruda</title><subtitle>My name is Julio Arruda, and i'm a Microsoft MVP and GitHub Star. In this blog, you can found contents about GitHub, Azure DevOps and more.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-15T13:47:17-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Julio Arruda</title><subtitle>My name is Julio Arruda, and i'm a Microsoft MVP and GitHub Star. In this blog, you can found contents about GitHub, Azure DevOps and more.
 </subtitle><author><name>Julio Arruda&quot;</name></author><entry><title type="html">Mapping Contracts from Logic Apps in Azure API Management using Azure Pipelines</title><link href="http://localhost:4000/2020/09/15/azdo-logic-apim.html" rel="alternate" type="text/html" title="Mapping Contracts from Logic Apps in Azure API Management using Azure Pipelines" /><published>2020-09-15T00:00:00-03:00</published><updated>2020-09-15T00:00:00-03:00</updated><id>http://localhost:4000/2020/09/15/azdo-logic-apim</id><content type="html" xml:base="http://localhost:4000/2020/09/15/azdo-logic-apim.html">&lt;h1 id=&quot;scenario&quot;&gt;Scenario&lt;/h1&gt;
 &lt;p&gt;Recently, one of my costumers decided to use Azure Logic App in applications to be responsable for some operations, for example, delete data and others.
 In the first time, i create all resources using Azure Portal, including the mapping from Logic Apps and APIM. BUT… In my scenarion, we are usign the Azure Pipelines to deploy All resources in Azure, Application and IaC, and now, i have a problem.&lt;/p&gt;
@@ -57,6 +57,41 @@ For example, when you integrate the both using Azure Portal, behind the scenes, 
 &lt;script src=&quot;https://gist.github.com/julioarruda/55403362a03a11ce0fb62b2a09c2052a.js&quot;&gt;&lt;/script&gt;
 
 &lt;h2 id=&quot;mounting-the-inbound-process&quot;&gt;Mounting the Inbound Process.&lt;/h2&gt;
-&lt;p&gt;Now, we can be able to create a Inbound Process to Add in your API Method, like the first script in this article.
-&lt;script src=&quot;https://gist.github.com/julioarruda/9ce0ac2ed8830b7c869cc1e5b23a7d3a.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;</content><author><name>Julio Arruda&quot;</name></author><category term="Azure Devops" /><category term="Azure Pipelines" /><category term="Logic Apps" /><category term="APIM" /><category term="Azure" /><summary type="html">Scenario Recently, one of my costumers decided to use Azure Logic App in applications to be responsable for some operations, for example, delete data and others. In the first time, i create all resources using Azure Portal, including the mapping from Logic Apps and APIM. BUT… In my scenarion, we are usign the Azure Pipelines to deploy All resources in Azure, Application and IaC, and now, i have a problem.</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/2020/09/14/hello-world.html" rel="alternate" type="text/html" title="Hello World" /><published>2020-09-14T00:00:00-03:00</published><updated>2020-09-14T00:00:00-03:00</updated><id>http://localhost:4000/2020/09/14/hello-world</id><content type="html" xml:base="http://localhost:4000/2020/09/14/hello-world.html">&lt;h1 id=&quot;hello-world&quot;&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;Now, we can be able to create a Inbound Process to Add in your API Method, like the first script in this article, changing the variables from Backend Name and Named Value.
+&lt;script src=&quot;https://gist.github.com/julioarruda/9ce0ac2ed8830b7c869cc1e5b23a7d3a.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;azure-pipelines&quot;&gt;Azure Pipelines&lt;/h2&gt;
+&lt;p&gt;Now, we can now how to create all points in Azure using scripts. Now, we can add the scripts in Azure DevOps pipelines. The first step for this, is add an Azure DevOps Extension from Marketplace.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=stephane-eyskens.apim&quot;&gt;API Management Suite&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This extension, is the most complete in Marketplace today. With this extension, we can deploy API’s in APIM from Swagger, from Functions, apply Global Policies and apply Inbound Process in each API method. In this example, we need especifically the task to deploy a Inbound Process in API Method.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;..\..\..\assets\img\apim-extension-marketplace.png&quot; alt=&quot;image 02 - APIM Extension Marketplace&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We need another extension, called &lt;em&gt;ARM Outputs&lt;/em&gt;, you need this to get output values from ARM Templates Executions.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs&quot;&gt;ARM Outputs&lt;/a&gt;
+&lt;img src=&quot;..\..\..\assets\img\arm-output-extension-marketplace.png&quot; alt=&quot;image 03 - ARM Output Extension Marketplace&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;azure-pipelines---process&quot;&gt;Azure Pipelines - Process&lt;/h2&gt;
+&lt;p&gt;Now, we can to create our Pipeline to deploy this integration on APIM. This script, is the steps that you need to add in your own pipeline, with adjusts, like Subscrpition ID, Resource Group name, and others.&lt;/p&gt;
+
+&lt;p&gt;The Steps are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;‘Create APIM Backend’ (Azure CLI)&lt;/li&gt;
+  &lt;li&gt;‘Getting LogicApp Access Key’ (ARM Template)&lt;/li&gt;
+  &lt;li&gt;‘Output Access Key’ (Output ARM Template)&lt;/li&gt;
+  &lt;li&gt;‘Create APIM Named Value’ (Azure CLI)&lt;/li&gt;
+  &lt;li&gt;‘API Management - Set or update an operation policy ‘ (Stephane’s Task)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script src=&quot;https://gist.github.com/julioarruda/87ba1cc11a4ac75d8369176aa094deae.js&quot;&gt;&lt;/script&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;It’s a big process, but it’s a very simple after you understand this. It’s solved my scenario and probably will be help you too. If you have a questions, ask me in the comments. :)&lt;/p&gt;</content><author><name>Julio Arruda&quot;</name></author><category term="azure-devops" /><category term="azure-pipelines" /><category term="logic-apps" /><category term="apim" /><category term="azure" /><summary type="html">Scenario Recently, one of my costumers decided to use Azure Logic App in applications to be responsable for some operations, for example, delete data and others. In the first time, i create all resources using Azure Portal, including the mapping from Logic Apps and APIM. BUT… In my scenarion, we are usign the Azure Pipelines to deploy All resources in Azure, Application and IaC, and now, i have a problem.</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/2020/09/14/hello-world.html" rel="alternate" type="text/html" title="Hello World" /><published>2020-09-14T00:00:00-03:00</published><updated>2020-09-14T00:00:00-03:00</updated><id>http://localhost:4000/2020/09/14/hello-world</id><content type="html" xml:base="http://localhost:4000/2020/09/14/hello-world.html">&lt;h1 id=&quot;hello-world&quot;&gt;Hello World&lt;/h1&gt;
 &lt;p&gt;Welcome to my new blog using GitHub Pages&lt;/p&gt;</content><author><name>Julio Arruda&quot;</name></author><category term="Hello World" /><summary type="html">Hello World Welcome to my new blog using GitHub Pages</summary></entry></feed>

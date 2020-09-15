@@ -2,7 +2,7 @@
 layout      : post
 title       : "Mapping Contracts from Logic Apps in Azure API Management using Azure Pipelines"
 description : "Today, you will see how to connect your Logic App in APIM using Azure Pipelines"
-tags        : [Azure Devops, Azure Pipelines, Logic Apps, APIM, Azure]
+tags        : [azure-devops, azure-pipelines,logic-apps, apim, azure]
 ---
 
 # Scenario
@@ -59,3 +59,34 @@ In this script, we using the Access Key that we got in the last step, to add in 
 ## Mounting the Inbound Process.
 Now, we can be able to create a Inbound Process to Add in your API Method, like the first script in this article, changing the variables from Backend Name and Named Value.
 <script src="https://gist.github.com/julioarruda/9ce0ac2ed8830b7c869cc1e5b23a7d3a.js"></script>
+
+## Azure Pipelines
+Now, we can now how to create all points in Azure using scripts. Now, we can add the scripts in Azure DevOps pipelines. The first step for this, is add an Azure DevOps Extension from Marketplace.
+
+- [API Management Suite](https://marketplace.visualstudio.com/items?itemName=stephane-eyskens.apim)
+
+
+This extension, is the most complete in Marketplace today. With this extension, we can deploy API's in APIM from Swagger, from Functions, apply Global Policies and apply Inbound Process in each API method. In this example, we need especifically the task to deploy a Inbound Process in API Method.
+
+![image 02 - APIM Extension Marketplace](..\..\..\assets\img\apim-extension-marketplace.png)
+
+We need another extension, called *ARM Outputs*, you need this to get output values from ARM Templates Executions.
+
+- [ARM Outputs](https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs)
+![image 03 - ARM Output Extension Marketplace](..\..\..\assets\img\arm-output-extension-marketplace.png)
+
+
+## Azure Pipelines - Process
+Now, we can to create our Pipeline to deploy this integration on APIM. This script, is the steps that you need to add in your own pipeline, with adjusts, like Subscrpition ID, Resource Group name, and others.
+
+The Steps are:
+- 'Create APIM Backend' (Azure CLI)
+- 'Getting LogicApp Access Key' (ARM Template)
+- 'Output Access Key' (Output ARM Template)
+- 'Create APIM Named Value' (Azure CLI)
+- 'API Management - Set or update an operation policy ' (Stephane's Task)
+
+<script src="https://gist.github.com/julioarruda/87ba1cc11a4ac75d8369176aa094deae.js"></script>
+
+# Conclusion
+It's a big process, but it's a very simple after you understand this. It's solved my scenario and probably will be help you too. If you have a questions, ask me in the comments. :)
